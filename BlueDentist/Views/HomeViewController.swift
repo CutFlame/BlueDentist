@@ -72,6 +72,8 @@ class HomeViewController: UIViewController {
 
     var devices = [BluetoothDevice]()
 
+    lazy var manager = CBCentralManager(delegate: self, queue: nil)
+
     override func loadView() {
         view = HomeView()
     }
@@ -84,8 +86,6 @@ class HomeViewController: UIViewController {
         contentView.startButton.addTarget(self, action: #selector(startButtonTouched), for: UIControl.Event.touchUpInside)
         updateUI()
     }
-
-    lazy var manager = CBCentralManager(delegate: self, queue: nil)
 
     private func updateUI(state: CBManagerState? = nil) {
         let state = state ?? manager.state
@@ -145,7 +145,7 @@ extension HomeViewController: UITableViewDataSource {
     class DeviceCell: UITableViewCell {
         static let reuseIdentifier = "DeviceCell"
         override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-            super.init(style: UITableViewCell.CellStyle.subtitle, reuseIdentifier: DeviceCell.reuseIdentifier)
+            super.init(style: UITableViewCell.CellStyle.value1, reuseIdentifier: DeviceCell.reuseIdentifier)
         }
 
         required init?(coder: NSCoder) {
@@ -161,7 +161,8 @@ extension HomeViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: DeviceCell.reuseIdentifier, for: indexPath) as! DeviceCell
         let device = devices[indexPath.row]
         let name = device.peripheral.name ?? "Unnamed Peripheral"
-        cell.textLabel?.text = "\(name) (\(device.rssi))"
+        cell.textLabel?.text = "\(name)"
+        cell.detailTextLabel?.text = "\(device.rssi)"
         return cell
     }
 
@@ -221,22 +222,3 @@ struct BluetoothDevice {
 }
 
 
-extension CBUUID {
-    var title: String {
-        var title = self.description
-        if (title.hasPrefix("Unknown")) {
-            title = self.uuidString
-        }
-        return title
-    }
-}
-
-extension Data {
-    var hexString: String {
-        var hex:String = ""
-        for byte in self {
-            hex += String(format: "%02X", byte)
-        }
-        return hex
-    }
-}

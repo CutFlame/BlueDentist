@@ -18,6 +18,8 @@
 		2755B6F323109633002DD89B /* SubtitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2755B6F223109633002DD89B /* SubtitleCell.swift */; };
 		2755B6F52310964D002DD89B /* ServiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2755B6F42310964D002DD89B /* ServiceViewController.swift */; };
 		2755B6F72310966D002DD89B /* CharacteristicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2755B6F62310966D002DD89B /* CharacteristicViewController.swift */; };
+		2755B6F92311E26B002DD89B /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2755B6F82311E26B002DD89B /* Extensions.swift */; };
+		2755B6FB2311E6EE002DD89B /* CBCharacteristicPropertiesExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2755B6FA2311E6EE002DD89B /* CBCharacteristicPropertiesExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +48,8 @@
 		2755B6F223109633002DD89B /* SubtitleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubtitleCell.swift; sourceTree = "<group>"; };
 		2755B6F42310964D002DD89B /* ServiceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceViewController.swift; sourceTree = "<group>"; };
 		2755B6F62310966D002DD89B /* CharacteristicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacteristicViewController.swift; sourceTree = "<group>"; };
+		2755B6F82311E26B002DD89B /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		2755B6FA2311E6EE002DD89B /* CBCharacteristicPropertiesExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CBCharacteristicPropertiesExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,17 +91,14 @@
 		2755B6CB230F4C73002DD89B /* BlueDentist */ = {
 			isa = PBXGroup;
 			children = (
+				2755B6DA230F4C77002DD89B /* Info.plist */,
 				2755B6CC230F4C73002DD89B /* AppDelegate.swift */,
 				2755B6CE230F4C73002DD89B /* SceneDelegate.swift */,
 				2755B6D2230F4C77002DD89B /* Assets.xcassets */,
 				2755B6D7230F4C77002DD89B /* LaunchScreen.storyboard */,
-				2755B6DA230F4C77002DD89B /* Info.plist */,
 				2755B6D4230F4C77002DD89B /* Preview Content */,
-				2755B6EE230F52A9002DD89B /* HomeViewController.swift */,
-				2755B6F02310960F002DD89B /* DeviceViewController.swift */,
-				2755B6F223109633002DD89B /* SubtitleCell.swift */,
-				2755B6F42310964D002DD89B /* ServiceViewController.swift */,
-				2755B6F62310966D002DD89B /* CharacteristicViewController.swift */,
+				2755B6FD2311E8CB002DD89B /* Utilities */,
+				2755B6FC2311E79C002DD89B /* Views */,
 			);
 			path = BlueDentist;
 			sourceTree = "<group>";
@@ -117,6 +118,27 @@
 				2755B6E5230F4C77002DD89B /* Info.plist */,
 			);
 			path = BlueDentistTests;
+			sourceTree = "<group>";
+		};
+		2755B6FC2311E79C002DD89B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2755B6EE230F52A9002DD89B /* HomeViewController.swift */,
+				2755B6F02310960F002DD89B /* DeviceViewController.swift */,
+				2755B6F42310964D002DD89B /* ServiceViewController.swift */,
+				2755B6F62310966D002DD89B /* CharacteristicViewController.swift */,
+				2755B6F223109633002DD89B /* SubtitleCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		2755B6FD2311E8CB002DD89B /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				2755B6F82311E26B002DD89B /* Extensions.swift */,
+				2755B6FA2311E6EE002DD89B /* CBCharacteristicPropertiesExtensions.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -223,7 +245,9 @@
 				2755B6F323109633002DD89B /* SubtitleCell.swift in Sources */,
 				2755B6F12310960F002DD89B /* DeviceViewController.swift in Sources */,
 				2755B6F52310964D002DD89B /* ServiceViewController.swift in Sources */,
+				2755B6F92311E26B002DD89B /* Extensions.swift in Sources */,
 				2755B6CD230F4C73002DD89B /* AppDelegate.swift in Sources */,
+				2755B6FB2311E6EE002DD89B /* CBCharacteristicPropertiesExtensions.swift in Sources */,
 				2755B6F72310966D002DD89B /* CharacteristicViewController.swift in Sources */,
 				2755B6CF230F4C73002DD89B /* SceneDelegate.swift in Sources */,
 				2755B6EF230F52A9002DD89B /* HomeViewController.swift in Sources */,

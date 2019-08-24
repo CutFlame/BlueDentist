@@ -68,6 +68,43 @@ class CharacteristicViewController: UITableViewController, CBPeripheralDelegate 
         tableView.reloadData()
     }
     func peripheral(_ peripheral: CBPeripheral, didUpdateValueFor characteristic: CBCharacteristic, error: Error?) {
+                if let data = characteristic.value {
+                    switch data[2] {
+                    case 1:
+                        //handle turn
+                        let turn = data[3]
+                        let other1 = data[4]
+                        let other2 = data[5]
+                        print("Turn \(turn)\t-\t\(other1) \(other2)")
+
+                    case 3:
+                        //handle gyro movement
+        //                let count = Int(data[1])
+        //                let final = data[count - 1]
+        //                print(final)
+                        break
+
+                    default:
+                        //handle everything else
+                        print(data.hexString)
+
+                    }
+
+                    //if data.count > 8 { return }
+        //            if let ascii = String(data: data, encoding: String.Encoding.ascii) {
+        //                print("ASCII:\t" + ascii)
+        //            }
+                    //print("Hex: " + data.hexString)
+        //            if data.count <= 8 {
+        //                var decimal:Int64 = 0
+        //                (data as NSData).getBytes(&decimal, length: data.count)
+        //                print("Decimal:\t\(decimal)")
+        //            }
+
+                    //handle turn
+                    //let turn = data[3]
+
+                }
         tableView.reloadData()
     }
     func peripheral(_ peripheral: CBPeripheral, didUpdateNotificationStateFor characteristic: CBCharacteristic, error: Error?) {
